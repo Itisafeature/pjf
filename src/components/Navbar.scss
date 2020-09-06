@@ -1,0 +1,14 @@
+.signup-navigation-container {
+  height: 10%;
+  display: flex;
+
+  .signup-welcome-container {
+    height: 100%;
+    width: 60%;
+    background-color: rgb(240, 186, 85);
+
+    .logo-img {
+      min-height: 100%;
+    }
+  }
+}
