@@ -1,6 +1,15 @@
+$link-text-color: #52c8fa;
+$orange-color: rgb(250, 188, 73);
+
 .signup-container {
-  min-height: 100%;
+  min-height: 85%;
   height: 1px;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: $link-text-color;
 }
 
 .signup-welcome {
@@ -8,7 +17,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: rgb(240, 186, 85);
+  background-color: $orange-color;
   width: 60%;
 
   .company-info {
@@ -16,10 +25,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5em;
+    margin-top: -10em;
+    color: rgb(226, 86, 196);
 
     .company-tagline {
-      margin: 0;
+      // margin: 0;
     }
 
     .company-summary {
@@ -33,4 +43,60 @@
 
 .signup-information {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+
+  .signup-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-top: -8em;
+  }
+
+  .signin-link-span {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.02em;
+    padding: 6px 24px;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+
+    .signup-form-btn {
+      box-shadow: inset 0px 1px 0px 0px #fce2c1;
+
+      background-color: $orange-color;
+      border: 1px solid #eeb44f;
+      color: #ffffff;
+      text-shadow: 0px 1px 0px #cc9f52;
+    }
+
+    .signup-form-btn:active {
+      position: relative;
+      top: 1px;
+    }
+
+    .signup-form-btn:focus {
+      outline: none;
+    }
+  }
+
+  .google-signin-btn {
+    background-color: white;
+  }
+
+  .signup-card-item {
+    margin-bottom: 10px;
+  }
 }
