@@ -1,12 +1,8 @@
-$logo-color-blue: #52c8fa;
+$link-text-color: #52c8fa;
 
 .signup-navigation-container {
   height: 15%;
   display: flex;
-
-  a {
-    text-decoration: none;
-  }
 
   .signup-welcome-container {
     height: 100%;
@@ -20,6 +16,7 @@ $logo-color-blue: #52c8fa;
     }
 
     .learn-more {
+      color: white;
       margin: auto 0;
     }
 
@@ -29,7 +26,7 @@ $logo-color-blue: #52c8fa;
 
     .learn-more:hover,
     .learn-more:active {
-      color: $logo-color-blue;
+      color: $link-text-color;
     }
   }
 
@@ -39,18 +36,22 @@ $logo-color-blue: #52c8fa;
     display: flex;
     justify-content: flex-end;
 
-    .signin-link {
+    .signin-link,
+    .signin-link__team {
       color: black;
-      margin: auto 50px auto 0;
+      margin: auto 25px auto 0;
     }
 
-    .signin-link:visited {
+    .signin-link:visited,
+    .signin-link__team:visited {
       color: black;
     }
 
     .signin-link:active,
-    .signin-link:hover {
-      color: $logo-color-blue;
+    .signin-link__team:active,
+    .signin-link:hover,
+    .signin-link__team:hover {
+      color: $link-text-color;
     }
   }
 }

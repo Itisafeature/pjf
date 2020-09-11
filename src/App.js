@@ -1,13 +1,20 @@
 import React from 'react';
 import './App.scss';
-import Signup from './components/Signup';
-import Navbar from './components/Navbar';
+import { Switch, Route } from 'react-router-dom';
+import UserSignup from './components/UserSignup';
+import TeamSignup from './components/TeamSignup';
 
 const App = () => {
   return (
     <div className="app-container">
-      <Navbar />
-      <Signup />
+      <Switch>
+        <Route exact path="/users/signup">
+          <UserSignup />
+        </Route>
+        <Route exact path="/teams/signup">
+          <TeamSignup />
+        </Route>
+      </Switch>
     </div>
   );
 };

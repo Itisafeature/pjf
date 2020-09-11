@@ -1,0 +1,33 @@
+$link-text-color: #52c8fa;
+$orange-color: rgb(250, 188, 73);
+
+.signup-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: $orange-color;
+  width: 60%;
+
+  .company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -10em;
+
+    .company-tagline {
+      color: black;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .company-summary {
+      width: 50%;
+      color: white;
+      font-size: 1.25em;
+      text-align: center;
+      margin: 20px auto 0px auto;
+    }
+  }
+}
