@@ -91,5 +91,10 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 540px) {
+  .signup-information {
+    .signup-card {
+      width: 80%;
+    }
+  }
 }
