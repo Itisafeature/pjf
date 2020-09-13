@@ -4,6 +4,10 @@ $link-text-color: #52c8fa;
   height: 15%;
   display: flex;
 
+  a {
+    text-decoration: none;
+  }
+
   .signup-welcome-container {
     height: 100%;
     width: 60%;
@@ -30,28 +34,67 @@ $link-text-color: #52c8fa;
     }
   }
 
-  .signup-form-navigation {
+  .signup-form-navigation__desktop,
+  .signup-form-navigation__mobile {
     height: 100%;
     width: 40%;
     display: flex;
     justify-content: flex-end;
 
     .signin-link,
-    .signin-link__team {
+    .signin-link__team,
+    .signup-link__team {
       color: black;
       margin: auto 25px auto 0;
     }
 
     .signin-link:visited,
-    .signin-link__team:visited {
+    .signin-link__team:visited,
+    .signup-link__team:visited {
       color: black;
     }
 
     .signin-link:active,
     .signin-link__team:active,
+    .signup-link__team:active,
     .signin-link:hover,
-    .signin-link__team:hover {
+    .signin-link__team:hover,
+    .signup-link__team:hover {
       color: $link-text-color;
+    }
+  }
+  .signup-form-navigation__mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .signup-navigation-container {
+    .signup-form-navigation__desktop {
+      display: none;
+    }
+    .signup-form-navigation__mobile {
+      display: flex;
+
+      .navbar-link__toggle {
+        margin: auto 25px auto 0;
+
+        .navbar-link__container {
+          position: fixed;
+          right: 1px;
+          background-color: #f9f9f9;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+
+          a {
+            color: black;
+            padding: 12px 8px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+        }
+      }
     }
   }
 }

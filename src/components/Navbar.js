@@ -1,37 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { titleCase } from 'title-case';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.scss';
-import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Navbar = () => {
+const Navbar = ({ obj, type }) => {
+  const oppObj = obj === 'user' ? 'team' : 'user';
+  const [collapsed, setCollapsed] = useState(true);
   const location = useLocation();
   return (
     <nav className="signup-navigation-container">
       <div className="signup-welcome-container">
-        <a href="#">
+        <Link to="/">
           <img
             className="logo-img"
             src="/project-tracker-logo.png"
             alt="company logo"
           ></img>
-        </a>
-        <a className="learn-more" href="#">
+        </Link>
+        <Link className="learn-more" to="/learn-more">
           Learn More
-        </a>
+        </Link>
       </div>
-      <div className="signup-form-navigation">
-        <a className="signin-link" href="#">
-          Sign In
-        </a>
-        {location.pathname.includes('users') && (
-            <a className="signin-link__team">Sign In as Team</a>
-          ) && (
-            <a href="/teams/signup" className="signin-link__team">
-              Sign Up as Team
-            </a>
+      <div className="signup-form-navigation__mobile">
+        <div
+          onClick={() => setCollapsed(!collapsed)}
+          className="navbar-link__toggle"
+        >
+          <FontAwesomeIcon icon={faBars} size="2x" />
+
+          {!collapsed && (
+            <div className="navbar-link__container">
+              <Link className="signup-link" to={`/${obj}s/signin`}>
+                Sign In
+              </Link>
+
+              <Link className="signup-link" to={`/${oppObj}s/signin`}>
+                Sign In as {titleCase(oppObj)}
+              </Link>
+              <Link className="signup-link" to={`/${oppObj}s/signup`}>
+                Sign Up as {titleCase(oppObj)}
+              </Link>
+            </div>
           )}
-        {location.pathname.includes('teams') && (
-          <a className="signin-link">Sign In as User</a>
-        )}
+        </div>
+      </div>
+      <div className="signup-form-navigation__desktop">
+        <Link to={`/${obj}s/signin`} className="signin-link">
+          Sign In
+        </Link>
+        <Link to={`/${oppObj}s/signup`} className="signin-link">
+          Sign Up as {titleCase(oppObj)}
+        </Link>
+        <Link to={`/${oppObj}s/signin`} className="signin-link">
+          Sign In as {titleCase(oppObj)}
+        </Link>
       </div>
     </nav>
   );

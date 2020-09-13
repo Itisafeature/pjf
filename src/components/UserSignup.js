@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import CompanyInfoLogin from './CompanyInfoLogin';
-import './UserSignup.scss';
+import './Signup.scss';
 import axios from 'axios';
 
 const Signup = () => {
@@ -18,6 +19,7 @@ const Signup = () => {
         email,
         password,
         passwordConfirm,
+        code,
       });
       console.log(res);
     } catch (err) {
@@ -27,14 +29,14 @@ const Signup = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar obj="user" type="signin" />
       <div className="signup-container">
         <CompanyInfoLogin />
         <div className="signup-information">
           <div className="signup-card">
             <h2 className="signup-card-header">Signup</h2>
             <span className="signin-link-span">
-              or <a href="#">Signin</a>
+              or <Link to="/users/signin">Signin</Link>
             </span>
             <form className="signup-form" onSubmit={handleSignup}>
               <input

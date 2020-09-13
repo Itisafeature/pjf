@@ -14,7 +14,8 @@ $orange-color: rgb(250, 188, 73);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: -10em;
+    position: relative;
+    top: -100px;
 
     .company-tagline {
       color: black;
@@ -30,4 +31,7 @@ $orange-color: rgb(250, 188, 73);
       margin: 20px auto 0px auto;
     }
   }
+}
+
+@media only screen and (max-width: 768px) {
 }
