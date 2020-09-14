@@ -12,7 +12,8 @@ const Signup = () => {
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [code, setCode] = useState('');
 
-  const handleSignup = async () => {
+  const handleSignup = async e => {
+    e.preventDefault();
     try {
       const res = await axios.post('/users/signup', {
         username,

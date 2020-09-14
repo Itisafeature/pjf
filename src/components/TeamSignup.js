@@ -11,7 +11,8 @@ const TeamSignup = () => {
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
 
-  const handleSignup = async () => {
+  const handleSignup = async e => {
+    e.preventDefault();
     try {
       const res = await axios.post('/teams/signup', {
         name,
@@ -19,6 +20,7 @@ const TeamSignup = () => {
         password,
         passwordConfirm,
       });
+      console.log(res);
     } catch (err) {
       console.log(err);
     }
