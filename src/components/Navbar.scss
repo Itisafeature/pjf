@@ -80,7 +80,7 @@ $link-text-color: #52c8fa;
         margin: auto 25px auto 0;
 
         .navbar-link__container {
-          position: fixed;
+          position: absolute;
           right: 1px;
           background-color: #f9f9f9;
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -96,5 +96,11 @@ $link-text-color: #52c8fa;
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .signup-navigation-container a {
+    width: 150px;
   }
 }

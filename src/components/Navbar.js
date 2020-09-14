@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { titleCase } from 'title-case';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.scss';
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Navbar = ({ obj, type }) => {
   const oppObj = obj === 'user' ? 'team' : 'user';
   const [collapsed, setCollapsed] = useState(true);
-  const location = useLocation();
+
   return (
     <nav className="signup-navigation-container">
       <div className="signup-welcome-container">

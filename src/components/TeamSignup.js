@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import CompanyInfoLogin from './CompanyInfoLogin';
 import Navbar from './Navbar';
 import './Signup.scss';
 
 const TeamSignup = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [passwordConfirm, setPasswordConfirm] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
 
-  const handleSignup = () => {};
+  const handleSignup = async () => {
+    try {
+      const res = await axios.post('/teams/signup', {
+        name,
+        email,
+        password,
+        passwordConfirm,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Navbar obj="team" type="signup" />
@@ -27,7 +40,7 @@ const TeamSignup = () => {
                 type="text"
                 className="signup-card-item"
                 id="signup-username"
-                placeholder="username"
+                placeholder="name"
                 value={name}
                 onChange={e => setName(e.target.value)}
               />

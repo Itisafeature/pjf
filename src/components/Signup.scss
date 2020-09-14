@@ -91,10 +91,26 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 1024px) {
+  .signup-information {
+    .signup-card {
+      top: -150px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .signup-information {
     .signup-card {
       width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .signup-information {
+    .signup-card {
+      top: -50px;
     }
   }
 }

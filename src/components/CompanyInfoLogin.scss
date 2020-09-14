@@ -33,5 +33,28 @@ $orange-color: rgb(250, 188, 73);
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
+  .signup-welcome {
+    .company-info {
+      top: -150px;
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .signup-welcome {
+    .company-info {
+      top: -50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .signup-welcome {
+    .company-info {
+      .company-summary {
+        width: 100%;
+      }
+    }
+  }
 }
